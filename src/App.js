@@ -7,12 +7,8 @@ function simulateNetworkRequest() {
 }
 
 function App() {
-  const [periodType, setPeriodType] = useState('');
   const [isLoading, setLoading] = useState(false);
 
-  const handleChange = (event) => {
-    setPeriodType(event.target.value);
-  };
   const handleClick = () => setLoading(true);
   useEffect(() => {
     if (isLoading) {
@@ -57,11 +53,12 @@ function App() {
           </Form.Group>
 
           <Button
+            data-go-estimate
             className="submit-btn"
             disabled={isLoading}
             onClick={!isLoading ? handleClick : null}
           >
-            {isLoading ? 'Loading…' : 'Click to load'}
+            {isLoading ? 'Loading…' : 'Save'}
           </Button>
         </Form>
       </div>
